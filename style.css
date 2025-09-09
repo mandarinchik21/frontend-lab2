@@ -1,0 +1,108 @@
+:root{
+  --table-border:#333;
+  --bg-1:#078f8f;
+  --bg-2:#f5f507;
+  --fg-1:#ffffff;
+  --fg-2:#111111;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:24px;
+  font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:#222;
+  background:#fafafa;
+}
+h1{font-size:24px;margin:0 0 16px}
+h2{font-size:20px;margin:24px 0 12px}
+h3{font-size:17px;margin:16px 0 10px}
+
+table{border-collapse:collapse;margin:12px 0;width:100%}
+table td{
+  border:2px solid var(--table-border);
+  padding:10px 12px;
+  text-align:center;
+  font-weight:600;
+  height:80px;
+}
+
+table.variant tr:nth-child(1){background:var(--bg-1);color:var(--fg-1)}
+table.variant tr:nth-child(2){background:var(--bg-2);color:var(--fg-2)}
+table.variant tr:nth-child(1):hover{background:var(--bg-2);color:var(--fg-2)}
+table.variant tr:nth-child(2):hover{background:var(--bg-1);color:var(--fg-1)}
+
+.clock{
+  width:220px;
+  height:220px;
+  background:#ececec;
+  border-radius:24px;
+  border:4px solid #111;
+  position:relative;
+  margin:16px 0 28px
+}
+.clock .dot{
+  width:22px;
+  height:22px;
+  background:red;
+  border-radius:50%;
+  border:3px solid #000;
+  position:absolute;
+  z-index:1;   
+}
+.clock-pos .dot.top{top:8px;left:50%;transform:translateX(-50%)}
+.clock-pos .dot.right{right:8px;top:50%;transform:translateY(-50%)}
+.clock-pos .dot.bottom{bottom:8px;left:50%;transform:translateX(-50%)}
+.clock-pos .dot.left{left:8px;top:50%;transform:translateY(-50%)}
+
+.clock-transform{display:grid;place-items:center}
+.clock-transform .dot{left:50%;top:50%;transform:translate(-50%,-50%)}
+.clock-transform .dot.top{transform:translate(-50%,-50%) translateY(-88px)}
+.clock-transform .dot.right{transform:translate(-50%,-50%) translateX(88px)}
+.clock-transform .dot.bottom{transform:translate(-50%,-50%) translateY(88px)}
+.clock-transform .dot.left{transform:translate(-50%,-50%) translateX(-88px)}
+
+.clock .hand{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:0;
+  height:0;
+  z-index:2; 
+}
+
+.clock .hand.hour::before,
+.clock .hand.hour::after{
+  content:"";
+  position:absolute;
+  left:-4px;         
+  background:#111;
+  border-radius:1px;
+}
+.clock .hand.hour::before{ 
+  width:8px;
+  height:88px;   
+  top:-88px;
+}
+.clock .hand.hour::after{
+  width:8px;
+  height:22px;   
+  top:0;
+}
+
+.clock .hand.minute::before,
+.clock .hand.minute::after{
+  content:"";
+  position:absolute;
+  top:-4px;              
+  background:#111;
+  border-radius:1px;
+  height:8px;
+}
+.clock .hand.minute::before{ 
+  width:70px;
+  left:0;
+}
+.clock .hand.minute::after{  
+  width:20px;
+  left:-20px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ткачук М.С., група ІА-32 Лаб2 Варіант 7</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <h1>Лабораторна робота — Таблиці та позиціонування</h1>
+
+  <section>
+    <h2>1) Таблиця за варіантом</h2>
+    <table class="variant">
+      <colgroup>
+        <col style="width:35%">
+        <col style="width:25%">
+        <col style="width:20%">
+        <col style="width:20%">
+      </colgroup>
+      <tr>
+        <td rowspan="2" colspan="2">Ткачук</td>
+        <td>Маргарита</td>
+        <td>Сергіївна</td>
+      </tr>
+      <tr>
+        <td>ІА-32</td>
+        <td rowspan="2">Лр2 Варіант 7</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>2) Малюнок «годинник»</h2>
+
+    <h3>2.1) Варіант через <code>position</code></h3>
+    <div class="clock clock-pos">
+      <div class="dot top"></div>
+      <div class="dot right"></div>
+      <div class="dot bottom"></div>
+      <div class="dot left"></div>
+      <div class="hand hour"></div>
+      <div class="hand minute"></div>
+    </div>
+
+    <h3>2.2) Варіант через <code>transform</code></h3>
+    <div class="clock clock-transform">
+      <div class="dot top"></div>
+      <div class="dot right"></div>
+      <div class="dot bottom"></div>
+      <div class="dot left"></div>
+      <div class="hand hour"></div>
+      <div class="hand minute"></div>
+    </div>
+  </section>
+</body>
+</html>
